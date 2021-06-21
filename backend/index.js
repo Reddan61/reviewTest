@@ -17,10 +17,10 @@ app.use(cors(corsOptions))
 app.use('/uploads',express.static('uploads'))
 
 
-app.get("/reviews",(req,res) => {
+app.get("/review/query",(req,res) => {
     res.status(200).json(Reviews.getReviews())
 })
-app.post("/reviews",multer.array('files',3),(req,res) => {
+app.post("/review/create",multer.array('files',3),(req,res) => {
     let data = {...req.body}
     data.images = req.files.map(el => el.path);
     data.id = Math.random() * 1000;

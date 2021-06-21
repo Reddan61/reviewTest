@@ -8,7 +8,7 @@ const instance = axios.create({
 
 export const reviewsAPI = {
     getReviews: () => {
-        return instance.get('/reviews').then(response => response.data)
+        return instance.get('/review/query').then(response => response.data)
     },
     addReview: (review,files) => {
         const formData = new FormData();
@@ -18,6 +18,6 @@ export const reviewsAPI = {
         [].forEach.call(files,el => {
             formData.append('files',el)
         })
-        return instance.post('/reviews',formData).then((response) => response.data)
+        return instance.post('/review/create',formData).then((response) => response.data)
     }
 }
