@@ -1,0 +1,33 @@
+@use "../../vars" as vars;
+
+.home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        max-width: 776px;
+        min-width: 776px;
+        padding: 40px 60px;
+    }
+    &__header {
+        width: 100%;
+        button {
+            color:#ffffff;
+            background-color: #0A6629;
+            border-radius: 0.5em;
+            padding: 0.5em 1em;
+            font-weight: 500;
+            &:hover {
+                transition: all .3s ease;
+                background-color: lighten(#0A6629,10%);
+            }
+        }
+    }
+    &__reviews {
+        :first-child {
+            margin: 0;
+        }
+    }
+}
+
